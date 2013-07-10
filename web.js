@@ -8,8 +8,8 @@ app.get('/', function(request, response) {
   fs.stat(file, function(error, stats){
     fs.open(file, "r", function(error, fd){
       var buf = new Buffer(stats.size);
-      fs.readSync(file, buffer, 0, buffer.length, null);
-      response.send(buf.toString("utf-8", 0, buffer.length));
+      fs.readSync(fd, buf, 0, buf.length, null);
+      response.send(buf.toString("utf-8", 0, buf.length));
     };
   };
  // response.send('Hello World 2!');

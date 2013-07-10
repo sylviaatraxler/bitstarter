@@ -3,7 +3,7 @@ var express = require('express');
 var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
-
+  var file = "index.html";
   var fs = require('fs');
   fs.stat(file, function(error, stats){
     fs.open(file, "r", function(error, fd){

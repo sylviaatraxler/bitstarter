@@ -10,8 +10,8 @@ app.get('/', function(request, response) {
       var buf = new Buffer(stats.size);
       fs.readSync(fd, buf, 0, buf.length, null);
       response.send(buf.toString("utf-8", 0, buf.length));
-    };
-  };
+    });
+  });
  // response.send('Hello World 2!');
 });
 
